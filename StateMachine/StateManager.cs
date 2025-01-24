@@ -22,7 +22,7 @@ public abstract class StateManager<EState> : MonoBehaviour where EState : Enum
 
         EState nextStateKey = CurrentState.GetNextState();
 
-        if (!IsTransitioningState && nextStateKey.Equals(CurrentState))
+        if (!IsTransitioningState && nextStateKey.Equals(CurrentState.StateKey))
         {
             CurrentState.UpdateState();
         }
